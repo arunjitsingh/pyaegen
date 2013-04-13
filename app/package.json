@@ -1,0 +1,18 @@
+{
+  "name": "APP_NAME",
+  "version": "0.0.0",
+  "description": "APP_DESCRIPTION",
+  "main": "js/main.js",
+  "repository": "",
+  "author": "arunjit@me.com",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-ngmin": "0.0.2",
+    "grunt-contrib-concat": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-karma": "~0.4.3",
+    "grunt-contrib-watch": "~0.3.1"
+  }
+}
