@@ -18,6 +18,7 @@ fi
 
 cp -r $SCRIPT_DIR/* ./
 rm "$(basename $SCRIPT)"
+echo "app/components" >> .gitignore
 git add .
 git commit -a -m "Initialized Python App Engine application"
 

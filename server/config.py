@@ -31,6 +31,9 @@ def GetAppId():
 
 WEBAPP2_CONFIG = {
     'webapp2_extras.jinja2': {
-        'template_path': ['template']
-    }
+        'template_path': ['templates']
+    },
+    'webapp2_extras.sessions': {
+        'secret_key': 'not really secret',
+    },
 }
