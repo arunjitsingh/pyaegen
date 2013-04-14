@@ -6,13 +6,20 @@
 
 {% block more_head %}
   <base href="/">
+  {# Are you using AngularJS? You should be. #}
+  <script>
+  /* AngularJS v1.0.6 (c) 2010-2012 Google, Inc. http://angularjs.org License: MIT */
+  (function(i){'use strict';function d(c,b,e){return c[b]||(c[b]=e())}return d(d(i,"angular",Object),"module",function(){var c={};return function(b,e,f){e&&c.hasOwnProperty(b)&&(c[b]=null);return d(c,b,function(){function a(a,b,d){return function(){c[d||"push"]([a,b,arguments]);return g}}if(!e)throw Error("No module: "+b);var c=[],d=[],h=a("$injector","invoke"),g={_invokeQueue:c,_runBlocks:d,requires:e,name:b,provider:a("$provide","provider"),factory:a("$provide","factory"),service:a("$provide","service"),
+  value:a("$provide","value"),constant:a("$provide","constant","unshift"),filter:a("$filterProvider","register"),controller:a("$controllerProvider","register"),directive:a("$compileProvider","directive"),config:h,run:function(a){d.push(a);return this}};f&&h(f);return g})}})})(window);
+  </script>
 {% endblock %}
 
 {% block body %}
   <nav>
+    <a href="#/">Home</a>
     <a href="#/inline">Inline tpl</a>
   </nav>
-  <section id="main" ng-app="main">
+  <section id="main">
     <section ng-view></section>
   {#
    # Angular view templates could go here, but that might collide with Jinja2's
@@ -29,13 +36,19 @@
   </section>
 {% endblock %}
 
-{# Are you using AngularJS? You should be. #}
 {% block more_body %}
+  <script>
+    $script([
   {% if not PRODUCTION or DEBUGGING %}
-    {{ macros.js_src('/jslib/angular/angular.js') }}
-    {{ macros.js_src('/js/main.js') }}
+      // DEBUGGING SCRIPTS
+      '/jslib/angular/angular.js',
+      '/js/main.js'
   {% else %}
-    {{ macros.js_src('//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js') }}
-    {{ macros.js_src('/js/app.min.js') }}
+      '//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js',
+      '/js/app.min.js'
   {% endif %}
+    ], function() {
+      angular.bootstrap(document, ['main']);
+    });
+  </script>
 {% endblock %}

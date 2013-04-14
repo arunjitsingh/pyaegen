@@ -26,7 +26,7 @@ echo "
 
 \033[0;32mInitialized Python App Engine application\033[0m
 
-\033[0;33mThis creates the client-side (JavaScript) app as a "separate"
+\033[0;33mThis creates the client-side (JavaScript) app as a 'separate'
 application.. almost.
 
 Update APP_NAME and APP_VERSION in app.yaml, app/component.json,
