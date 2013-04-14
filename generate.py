@@ -21,13 +21,13 @@ FILES_TO_MODIFY = [
 ]
 
 VALUES = [
-    ('App Engine application name', 'AE_APP_NAME', 'example'),
+    ('App Engine application name', 'AE_APP_NAME', '%(appname)s'),
     ('App Engine application version', 'AE_APP_VERSION', 'dev-0'),
     ('App Engine application description', 'AE_APP_DESC', 'Generated App Engine application'),
-    ('App Engine API name', 'AE_API_NAME', 'example'),
+    ('App Engine API name', 'AE_API_NAME', '%(appname)s'),
     ('App Engine API version', 'AE_API_VERSION', 'v1'),
     ('App Engine API decription', 'AE_API_DESC', 'Generated App Engine API endpoint'),
-    ('Angular application name', 'JS_APP_NAME', 'example'),
+    ('Angular application name', 'JS_APP_NAME', '%(appname)s'),
     ('Angular application version', 'JS_APP_VERSION', '0.0.0'),
     ('Angular application descrtiption', 'JS_APP_DESC', 'Generated AngularJS application'),
 ]
@@ -59,15 +59,17 @@ def main(argv):
   on the client side. It will ask for a bunch of values.
 
   """
-  
-  # copy files from _HERE/files to _CWD
+
   src = os.path.join(_HERE, 'files')
   dst = argv[1]
   ignores = shutil.ignore_patterns('*.pyc', '.*')
   shutil.copytree(src, dst, ignore=ignores)
 
+  appname = os.path.basename(dst)
+
   replacements = {}
   for prompt, key, default in VALUES:
+    default = default % ({'appname': appname})
     prompt = '>> %s [%s]: ' % (prompt, default)
     value = raw_input(prompt).strip()
     replacements[key] = value or default
