@@ -54,8 +54,12 @@ def RewriteFile(fname, replacements):
 
 
 def main(argv):
+  if len(argv) < 2:
+    print "Usage:\n\t%s relative/path/to/directory/to/create" % argv[0]
+    sys.exit(1)
+
   print """
-  This will generate an App Engine (python) application that uses AngularJS
+  This will generate an App Engine (Python) application that uses AngularJS
   on the client side. It will ask for a bunch of values.
 
   """
@@ -63,7 +67,6 @@ def main(argv):
   src = os.path.join(_HERE, 'files')
   dst = argv[1]
   ignores = shutil.ignore_patterns('*.pyc', '.*')
-  shutil.copytree(src, dst, ignore=ignores)
 
   appname = os.path.basename(dst)
 
@@ -76,6 +79,8 @@ def main(argv):
 
   replacements['AE_API_CLASS_NAME'] = CreateClassName(
       replacements['AE_API_NAME'])
+
+  shutil.copytree(src, dst, ignore=ignores)
 
   for fname in FILES_TO_MODIFY:
     fname = os.path.join(dst, fname)
