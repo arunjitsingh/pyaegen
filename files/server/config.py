@@ -2,7 +2,7 @@
 
 """Application configuration and App Engine context."""
 
-__author__ = 'Arunjit Singh <arunjit@me.com>'
+__author__ = 'arunjitsingh'
 
 import datetime
 import os
