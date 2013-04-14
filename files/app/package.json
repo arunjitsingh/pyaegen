@@ -1,10 +1,10 @@
 {
-  "name": "APP_NAME",
-  "version": "0.0.0",
-  "description": "APP_DESCRIPTION",
+  "name": "%(JS_APP_NAME)s",
+  "version": "%(JS_APP_VERSION)s",
+  "description": "%(JS_APP_DESC)s",
   "main": "js/main.js",
   "repository": "",
-  "author": "arunjit@me.com",
+  "author": "opensource@arunjitsingh.net",
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.1",

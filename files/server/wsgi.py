@@ -3,7 +3,7 @@
 """Base WSGI, with templates, sessions, RequestHandler, JSON and users."""
 from server import config
 
-__author__ = 'Arunjit Singh <arunjit@me.com>'
+__author__ = 'arunjitsingh'
 
 import json
 

@@ -5,7 +5,7 @@
 Adds AppStats middleware.
 """
 
-__author__ = 'Arunjit Singh <arunjit@me.com>'
+__author__ = 'arunjitsingh'
 
 
 appstats_DEBUG = True

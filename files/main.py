@@ -2,7 +2,7 @@
 
 """The main script."""
 
-__author__ = 'Arunjit Singh <arunjit@me.com>'
+__author__ = 'arunjitsingh'
 
 import webapp2
 

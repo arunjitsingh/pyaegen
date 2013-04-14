@@ -1,6 +1,6 @@
 {
-  "name": "APP_NAME",
-  "version": "0.0.0",
+  "name": "%(JS_APP_NAME)s",
+  "version": "%(JS_APP_VERSION)s",
   "main": "js/main.js",
   "ignore": [
     "**/.*",

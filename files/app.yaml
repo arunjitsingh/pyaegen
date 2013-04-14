@@ -1,5 +1,5 @@
-application: APP_NAME
-version: APP_VERSION
+application: %(AE_APP_NAME)s
+version: %(AE_APP_VERSION)s
 runtime: python27
 api_version: 1
 threadsafe: true
