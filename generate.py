@@ -103,12 +103,13 @@ def main(argv):
         $ bower install
         $ cd ..
     3. Try out the base app
-        $ path/to/appengine-python-sdk/dev_appserver.py \
-              --use_sqlite --clear_datastore --port=8888 \
+        $ path/to/appengine-python-sdk/dev_appserver.py \\
+              --use_sqlite --clear_datastore --port=8888 \\
               .
     4. Run tests
         $ nosetests -v
         $ cd app
+        $ npm install
         $ grunt test
         $ cd ..
 
