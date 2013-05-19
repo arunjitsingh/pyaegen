@@ -14,7 +14,7 @@ _HERE = os.path.dirname(__file__)
 #_CWD = os.getcwd()
 
 FILES_TO_MODIFY = [
-    os.path.join('app', 'component.json'),
+    os.path.join('app', 'bower.json'),
     os.path.join('app', 'package.json'),
     os.path.join('server', 'services.py'),
     os.path.join('app.yaml'),
@@ -96,7 +96,7 @@ def main(argv):
 
   Installing Bower (for Javascript library management):
     $ npm -g install bower
-  
+
   Installing Grunt (for Javascript app build):
     $ npm -g install grunt-cli
 
